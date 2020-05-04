@@ -1,18 +1,25 @@
 import React from 'react'
 
 class Form extends React.Component {
-    handleClick = () => {
-        console.log("Click");
+    constructor(props) {
+        super(props)
+        this.state = {value: ''}
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value})
     }
 
     render() {
         return (
             <React.Fragment>
-                <label>todo:</label>
-                <input type="text" className="todoform" />
-                <button onClick={() => this.handleClick()}>
-                  Click me
-                </button>
+                <label>
+                    todo:
+                    <input type="text" className="todoform" value={this.state.value} onChange={this.handleChange} />
+                    <input type="submit" value="Submit" />
+                </label>
             </React.Fragment>
         );
     }
