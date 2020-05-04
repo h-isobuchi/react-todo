@@ -1,8 +1,12 @@
 import React from 'react';
+import Form from './Form';
 
 function App() {
   return (
-    <h1>Hello, World!</h1>
+    <React.Fragment>
+      <h1>Todo App</h1>
+      <Form/>
+    </React.Fragment>
   );
 }
 
