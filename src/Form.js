@@ -18,7 +18,7 @@ class Form extends React.Component {
                 <label>
                     todo:
                     <input type="text" className="todoform" value={this.state.value} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Add" />
                 </label>
             </React.Fragment>
         );
