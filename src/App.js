@@ -5,9 +5,10 @@ import TodoList from './TodoList'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {value: ''}
+    this.state = {value: '' ,todos: []}
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChange(event) {
@@ -15,14 +16,16 @@ class App extends React.Component {
   }
 
   handleClick() {
-    console.log("Click!!!!")
+    const newTodo = this.state.todos.slice()
+    newTodo.push(this.state.value)
+    this.setState({value: '', todos: newTodo})
   }
 
   render() {
     return (
       <React.Fragment>
         <h1>Todo App</h1>
-        <Form value={this.value} handleChange={this.handleChange} handleClick={this.handleClick} />
+        <Form value={this.state.value} handleChange={this.handleChange} handleClick={this.handleClick} />
         <TodoList/>
       </React.Fragment>
     );
