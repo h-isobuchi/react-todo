@@ -14,11 +14,15 @@ class App extends React.Component {
     this.setState({value: event.target.value})
   }
 
+  handleClick() {
+    console.log("Click!!!!")
+  }
+
   render() {
     return (
       <React.Fragment>
         <h1>Todo App</h1>
-        <Form value={this.value} handleChange={this.handleChange} />
+        <Form value={this.value} handleChange={this.handleChange} handleClick={this.handleClick} />
         <TodoList/>
       </React.Fragment>
     );
