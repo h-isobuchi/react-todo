@@ -26,7 +26,7 @@ class App extends React.Component {
       <React.Fragment>
         <h1>Todo App</h1>
         <Form value={this.state.value} handleChange={this.handleChange} handleClick={this.handleClick} />
-        <TodoList/>
+        <TodoList todos={this.state.todos} /> 
       </React.Fragment>
     );
   }
