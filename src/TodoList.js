@@ -5,7 +5,8 @@ class TodoList extends React.Component {
         return (
             <ul>
                {this.props.todos.map(
-                   (todo) => <li><input type="checkbox" />{todo}<input type="submit" value="Delete" /></li>
+                   (todo, i) => <li key={i}><input type="checkbox" />{todo}<button onClick={() => this.props.handleDeleteClick(i)}>Delete</button>
+                   </li>
                )}
             </ul>
         );

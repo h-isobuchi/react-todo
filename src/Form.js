@@ -7,7 +7,7 @@ class Form extends React.Component {
                 <label>
                     todo:
                     <input type="text" className="todoform" value={this.props.value} onChange={this.props.handleChange} />
-                    <input type="submit" value="Add" onClick={this.props.handleClick} />
+                    <button onClick={this.props.handleAddClick}>Add</button>
                 </label>
             </React.Fragment>
         );
