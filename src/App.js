@@ -5,7 +5,7 @@ import TodoList from './TodoList'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {value: '' ,todos: []}
+    this.state = {value: '' ,todos: [], checked: false}
   }
 
   handleChange = (event) => {
@@ -24,12 +24,16 @@ class App extends React.Component {
     this.setState({todos: newTodo})
   }
 
+  handleCheckChange = () => {
+    this.setState({checked: !this.state.checked})
+  }
+
   render() {
     return (
       <React.Fragment>
         <h1>Todo App</h1>
         <Form value={this.state.value} handleChange={this.handleChange} handleAddClick={this.handleAddClick} />
-        <TodoList todos={this.state.todos} handleDeleteClick={this.handleDeleteClick} /> 
+        <TodoList todos={this.state.todos} handleDeleteClick={this.handleDeleteClick} checked={this.state.checked} handleCheckChange={this.handleCheckChange} /> 
       </React.Fragment>
     );
   }
