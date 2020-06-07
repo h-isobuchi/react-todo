@@ -23,9 +23,9 @@ class TodoList extends React.Component {
                {this.props.todos.map(
                    (todo, i) => <li key={i}>
                        <FormControlLabel
-                            control={<GreenCheckbox checked={this.props.checked} onChange={this.props.handleCheckChange} name="checkedG" />}
+                            control={<GreenCheckbox checked={this.props.todos[i].completed} onChange={() => this.props.handleCheckChange(i)} name="checkedG" />}
                         />
-                        <span className={this.props.checked ? "text-line-through" : "plain-text"}>{todo}</span>
+                        <span className={this.props.todos[i].completed ? "text-line-through" : "plain-text"}>{this.props.todos[i].todo}</span>
                         <Button variant="contained" color="primary" onClick={() => this.props.handleDeleteClick(i)}>Delete</Button>
                    </li>
                )}
