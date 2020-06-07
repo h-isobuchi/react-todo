@@ -25,7 +25,7 @@ class TodoList extends React.Component {
                        <FormControlLabel
                             control={<GreenCheckbox checked={this.props.checked} onChange={this.props.handleCheckChange} name="checkedG" />}
                         />
-                        {todo}
+                        <span className={this.props.checked ? "text-line-through" : "plain-text"}>{todo}</span>
                         <Button variant="contained" color="primary" onClick={() => this.props.handleDeleteClick(i)}>Delete</Button>
                    </li>
                )}
