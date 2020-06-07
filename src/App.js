@@ -5,7 +5,7 @@ import TodoList from './TodoList'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {value: '' ,todos: [{todo: '', completed: false}]}
+    this.state = {value: '' ,todos: []}
   }
 
   handleChange = (event) => {
