@@ -5,17 +5,17 @@ import TodoList from './TodoList'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {value: '' ,todos: []}
+    this.state = {formValue: '' ,todos: []}
   }
 
   handleChange = (event) => {
-    this.setState({value: event.target.value})
+    this.setState({formValue: event.target.value})
   }
 
   handleAddClick = () => {
     const newTodo = this.state.todos.slice()
-    newTodo.push({todo: this.state.value, completed: false})
-    this.setState({value: '', todos: newTodo})
+    newTodo.push({todo: this.state.formValue, completed: false})
+    this.setState({formValue: '', todos: newTodo})
   }
 
   handleDeleteClick = (index) => {
@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <h1>Todo App</h1>
-        <Form value={this.state.value} handleChange={this.handleChange} handleAddClick={this.handleAddClick} />
+        <Form value={this.state.formValue} handleChange={this.handleChange} handleAddClick={this.handleAddClick} />
         <TodoList todos={this.state.todos} handleDeleteClick={this.handleDeleteClick} handleCheckChange={this.handleCheckChange} /> 
       </React.Fragment>
     );
