@@ -4,11 +4,9 @@ class Form extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <label>
-                    todo:
-                    <input type="text" className="todoform" value={this.props.formValue} onChange={this.props.handleChange} />
-                    <button onClick={this.props.handleAddClick}>Add</button>
-                </label>
+                <label>todo:</label>
+                <input type="text" className="todoform" value={this.props.formValue} onChange={this.props.handleChange} />
+                <button onClick={this.props.handleAddClick}>Add</button>
             </React.Fragment>
         );
     }

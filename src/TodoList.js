@@ -22,11 +22,11 @@ class TodoList extends React.Component {
         return (
             <ul>
                {this.props.todos.map(
-                   (todo, i) => <li key={i}>
+                   (todolist, i) => <li key={i}>
                        <FormControlLabel
-                            control={<GreenCheckbox checked={this.props.todos[i].completed} onChange={() => this.props.handleCheckChange(i)} name="checkedG" />}
+                            control={<GreenCheckbox checked={todolist.completed} onChange={() => this.props.handleCheckChange(i)} name="checkedG" />}
                         />
-                        <span className={this.props.todos[i].completed ? "text-line-through" : "plain-text"}>{this.props.todos[i].todo}</span>
+                        <span className={todolist.completed ? "text-line-through" : "plain-text"}>{todolist.todo}</span>
                         <IconButton aria-label="delete" onClick={() => this.props.handleDeleteClick(i)}>
                           <DeleteIcon />
                         </IconButton>
