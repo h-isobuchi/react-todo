@@ -24,7 +24,7 @@ function Form(props) {
                 <TextField 
                     label="What needs to be done?"
                     className={classes.root.todoForm}
-                    value={props.formValue}
+                    value={props.value}
                     onChange={props.handleChange}
                     onKeyDown={e => {
                         if(e.keyCode === 13){
