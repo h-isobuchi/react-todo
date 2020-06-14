@@ -1,6 +1,9 @@
 import React from 'react';
 import Form from './Form';
 import TodoList from './TodoList'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +36,11 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Todo App</h1>
+        <AppBar>
+          <Toolbar>
+            <Typography variant="h4">Todo App</Typography>
+          </Toolbar>
+        </AppBar>
         <Form value={this.state.formValue} handleChange={this.handleChange} handleAddClick={this.handleAddClick} />
         <TodoList todos={this.state.todos} handleDeleteClick={this.handleDeleteClick} handleCheckChange={this.handleCheckChange} /> 
       </React.Fragment>
