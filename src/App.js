@@ -16,7 +16,7 @@ class App extends React.Component {
     this.setState({formValue: event.target.value})
   }
 
-  handleAddClick = () => {
+  handleOnEnterKeyDown = () => {
     const newTodo = this.state.todos.slice()
     newTodo.push({todo: this.state.formValue, completed: false})
     this.setState({formValue: '', todos: newTodo})
@@ -48,7 +48,7 @@ class App extends React.Component {
             <Typography variant="h4">Todo App</Typography>
           </Toolbar>
         </AppBar>
-        <Form value={this.state.formValue} handleChange={this.handleChange} handleAddClick={this.handleAddClick} />
+        <Form value={this.state.formValue} handleChange={this.handleChange} handleOnEnterKeyDown={this.handleOnEnterKeyDown} />
         <TodoList todos={this.state.todos} handleDeleteClick={this.handleDeleteClick} handleCheckChange={this.handleCheckChange} /> 
       </React.Fragment>
     );

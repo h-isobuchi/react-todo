@@ -22,8 +22,17 @@ function Form(props) {
     return (
         <React.Fragment>
             <div className={classes.root}>
-                <TextField label="enter todo" className={classes.root.todoForm} value={props.formValue} onChange={props.handleChange} />
-                <button className={classes.root.addButton} onClick={props.handleAddClick}>Add</button>
+                <TextField 
+                    label="What needs to be done?"
+                    className={classes.root.todoForm}
+                    value={props.formValue}
+                    onChange={props.handleChange}
+                    onKeyDown={e => {
+                        if(e.keyCode === 13){
+                            props.handleOnEnterKeyDown()
+                        }
+                    }}
+                />
             </div>
         </React.Fragment>
     )
