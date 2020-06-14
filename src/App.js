@@ -4,6 +4,7 @@ import TodoList from './TodoList'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,10 +34,16 @@ class App extends React.Component {
     this.setState({todos: newTodo})
   }
 
+  useStyles = makeStyles((theme) => ({
+    header: {
+      display: "block",
+    },
+  }));
+
   render() {
     return (
       <React.Fragment>
-        <AppBar>
+        <AppBar className="header">
           <Toolbar>
             <Typography variant="h4">Todo App</Typography>
           </Toolbar>
