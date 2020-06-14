@@ -5,13 +5,12 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'block',
-        paddingTop: 70,
+        position: 'absolute',
+        top: 70,
+        left: 30,
         todoForm: {
             display: 'inline',
-            width: 200,
-        },
-        addButton: {
-            display: 'inline',
+            maxWidth: 360,
         },
     },
 }));

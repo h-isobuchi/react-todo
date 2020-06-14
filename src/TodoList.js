@@ -13,8 +13,12 @@ import './TodoList.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: 'block',
+    position: 'absolute',
     width: '100%',
     maxWidth: 360,
+    top: 120,
+    left: 30,
     backgroundColor: theme.palette.background.paper,
   },
 }));
