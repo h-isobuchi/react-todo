@@ -39,7 +39,7 @@ function TodoList(props) {
           const labelId = `checkbox-list-label-${i}`;
 
           return (
-            <ListItem key={i}>
+            <ListItem key={i} role={undefined} dense button>
               <ListItemIcon>
                 <GreenCheckbox 
                   checked={todolist.completed}
